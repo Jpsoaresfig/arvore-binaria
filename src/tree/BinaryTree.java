@@ -18,15 +18,29 @@ public class BinaryTree {
     }
 
     public void insert(Student student){
-        
+        Node newNode = new Node(student);
+        insert(root, newNode);
     }
 
-    private void insert(Node node, Student student){
-        
-    }
+    private void insert(Node node, Node newNode){
 
-    public void remove(Long rgm){
-        
+        if (root == null){
+            root = node;
+        }else {
+            if (newNode.getStudent().getRgm() < node.getStudent().getRgm()){
+                if (node.getLeft() == null){
+                    node.setLeft(newNode);
+                }else{
+                    insert(node.getLeft(), newNode);
+                }
+            } else if (newNode.getStudent().getRgm() > node.getStudent().getRgm()) {
+                if (node.getRight() == null){
+                    node.setRight(newNode);
+                }else {
+                    insert(node.getRight(), newNode);
+                }
+            }
+        }
     }
 
     private void remove(Node node, Long rgm){
