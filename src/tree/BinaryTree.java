@@ -47,12 +47,20 @@ public class BinaryTree {
         
     }
 
-    public Student search(Long rgm){
-        return null;
+    public Student search(Long rgm) { // recebe um RGm e retorna o student
+        return search(root, rgm);
     }
-
-    private Student search(Node node, Long rgm){
-        return null;
+    
+    private Student search(Node node, Long rgm) {
+        if (node == null || node.getStudent().getRgm().equals(rgm)) { // verifica duas condições: se o nó é nulo ou se encontrou o RGm
+            return node != null ? node.getStudent() : null; // retorna o estudante caso encontrado, caso contrário retorna null
+        }
+    
+        if (rgm < node.getStudent().getRgm()) {
+            return search(node.getLeft(), rgm); // continua a busca no lado esquerdo da árvore
+        } else {
+            return search(node.getRight(), rgm); // continua a busca no lado direito da árvore
+        }
     }
 
     public void emptyTree(){
