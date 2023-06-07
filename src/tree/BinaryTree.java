@@ -25,7 +25,7 @@ public class BinaryTree {
     private void insert(Node node, Node newNode){
 
         if (root == null){
-            root = node;
+            root = newNode;
         }else {
             if (newNode.getStudent().getRgm() < node.getStudent().getRgm()){
                 if (node.getLeft() == null){
@@ -43,8 +43,53 @@ public class BinaryTree {
         }
     }
 
-    private void remove(Node node, Long rgm){
-        
+    public void remove(Long rgm){
+        root = remove(root, rgm);
+    }
+
+    private Node remove(Node node, Long rgm){
+        // se não encontrar
+        if(node == null){
+            System.out.println("Aluno não encontrado");
+            return null;
+        }
+        // se o rgm for menor que o rgm do nó atual, continua a busca no lado esquerdo da árvore
+        if (rgm < node.getStudent().getRgm()){
+            node.setLeft(remove(node.getLeft(), rgm));
+        }
+        // se o rgm for maior que o rgm do nó atual, continua a busca no lado direito da árvore
+        else if (rgm > node.getStudent().getRgm()){
+            node.setRight(remove(node.getRight(), rgm));
+        }
+        // se o rgm for igual ao rgm do nó atual, encontrou o nó a ser removido
+        else {
+            // se o nó não tiver filhos
+            if (node.getLeft() == null && node.getRight() == null){
+                return null;
+            }
+            // se o nó tiver apenas um filho à direita
+            else if (node.getLeft() == null){
+                return node.getRight();
+            }
+            // se o nó tiver apenas um filho à esquerda
+            else if (node.getRight() == null){
+                return node.getLeft();
+            }
+            // se o nó tiver dois filhos
+            else {
+                Node next = findNext(node.getRight());
+                node.setStudent(next.getStudent());
+                node.setRight(remove(node.getRight(), next.getStudent().getRgm()));
+            }
+        }
+        return node;
+    }
+
+    private Node findNext(Node node){
+        if(node.getLeft() != null){
+            return findNext(node.getLeft());
+        }
+        return node;
     }
 
     public Student search(Long rgm) { // recebe um RGm e retorna o student
