@@ -2,6 +2,7 @@ package app;
 
 import java.util.Scanner;
 
+import entities.Student;
 import tree.BinaryTree;
 
 public class UI {
@@ -76,6 +77,19 @@ public class UI {
     
     private static void search(Scanner sc, BinaryTree tree) {
         
+        System.out.print("Digite o RGM a pesquisar: ");
+        Long rgm = sc.nextLong();
+        sc.nextLine();
+    
+        // Chama a função search e obtém o Student correspondente
+        Student foundStudent = tree.search(rgm);
+    
+        if (foundStudent != null) {
+            System.out.println("Student found: " + foundStudent.getName());
+        } else {
+            System.out.println("Student not found.");
+        }
+    
         confirmBackToMenu(sc, tree);
     }
 
