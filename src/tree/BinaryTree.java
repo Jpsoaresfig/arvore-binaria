@@ -63,14 +63,27 @@ public class BinaryTree {
         }
     }
 
-    public void emptyTree(){
-        
-    }
 
-    private void emptyTree(Node node){
-        
+    
+    public void emptyTree() {// chamar método para esvaziar a árvore a partir da raiz
+        emptyTree(root); 
+        root = null; 
+    
     }
-
+    
+    private void emptyTree(Node node) {
+        if (node == null) {
+            return; // Se o nó for nulo, não há mais nós para esvaziar, então retorna
+        }
+    
+        emptyTree(node.getLeft()); // Chama o método recursivo para esvaziar a subárvore esquerda
+        emptyTree(node.getRight()); // Chama o método recursivo para esvaziar a subárvore direita
+    
+        node.setLeft(null); // Remove a referência para o filho esquerdo, liberando a memória
+        node.setRight(null); // Remove a referência para o filho direito, liberando a memória
+    }
+    
+    
     public void printTreeInOrder(){
         
     }
