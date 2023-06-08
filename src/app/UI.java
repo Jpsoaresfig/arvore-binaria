@@ -85,9 +85,9 @@ public class UI {
         Student foundStudent = tree.search(rgm);
     
         if (foundStudent != null) {
-            System.out.println("Student found: " + foundStudent.getName());
+            System.out.println("Estudante encontrado: " + foundStudent.getName());
         } else {
-            System.out.println("Student not found.");
+            System.out.println("Estudante não encontrado.");
         }
     
         confirmBackToMenu(sc, tree);
