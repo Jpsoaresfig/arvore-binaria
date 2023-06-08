@@ -1,0 +1,3 @@
+maria,22
+luiz,6
+rafael,9
