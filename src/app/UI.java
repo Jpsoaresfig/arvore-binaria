@@ -71,7 +71,26 @@ public class UI {
     }
 
     private static void remove(Scanner sc, BinaryTree tree) {
-        
+        System.out.print("Digite o RGM a remover: ");
+        Long rgm = sc.nextLong();
+        sc.nextLine();
+
+        Student removedStudent = tree.search(rgm);
+        if(removedStudent != null){
+            System.out.println("Tem certeza que deseja remover o estudante " + removedStudent.getName() + "? (S/N)");
+            System.out.print("Opção: ");
+            String confirm = sc.nextLine();
+            
+            if (confirm.equalsIgnoreCase("S")){
+                tree.remove(rgm);
+            }else{
+                System.out.println("Operação cancelada!");
+            }
+            
+        }else{
+            System.out.println("Estudante não encontrado.");
+        }
+
         confirmBackToMenu(sc, tree);
     }
     
@@ -95,7 +114,15 @@ public class UI {
 
     
     private static void emptyTree(Scanner sc, BinaryTree tree) {
-
+        System.out.println("Tem certeza que deseja esvaziar a árvore? (S/N)");
+        System.out.print("Opção: ");
+        String confirm = sc.nextLine();
+        if (confirm.equalsIgnoreCase("S")){
+            tree.setRoot(null);
+            System.out.println("Árvore esvaziada com sucesso!");
+        }else{
+            System.out.println("Operação cancelada!");
+        }
         confirmBackToMenu(sc, tree);
     }
 
