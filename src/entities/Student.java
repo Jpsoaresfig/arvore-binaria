@@ -53,5 +53,9 @@ public class Student {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return rgm + " - " + name;
+    }
     
 }

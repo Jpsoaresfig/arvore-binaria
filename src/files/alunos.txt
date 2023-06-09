@@ -1,0 +1,10 @@
+maria,15
+luiz,6
+rafael,9
+joao,14
+filipe,19
+helio,17
+jorge,18
+erika,16
+carlos,22
+jorginho,21

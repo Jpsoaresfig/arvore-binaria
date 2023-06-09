@@ -10,6 +10,10 @@ public class Node {
     public Node() {
     }
 
+    public Node(Student student){
+        this.student = student;
+    }
+
     public Node getLeft() {
         return left;
     }
