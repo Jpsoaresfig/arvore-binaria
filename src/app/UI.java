@@ -66,6 +66,21 @@ public class UI {
 
     private static void insert(Scanner sc, BinaryTree tree) {
 
+        System.out.println("Nome do aluno: ");
+        String nome = sc.nextLine();
+        System.out.println("Numero do RGM: ");
+        long rgm = sc.nextLong();
+
+        sc.nextLine();
+
+        if (tree.search(rgm) == null ){
+            Student newStudent = new Student(nome,rgm);
+            tree.insert(newStudent);
+            System.out.println("Aluno inserido com sucesso!");
+        }else {
+            System.out.println("Esse RGM ja existe!");
+        }
+
         confirmBackToMenu(sc, tree);
     }
 
