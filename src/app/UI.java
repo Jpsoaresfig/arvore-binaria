@@ -128,6 +128,24 @@ public class UI {
 
     private static void show(Scanner sc, BinaryTree tree) {
 
+        System.out.println("1 - Mostrar em ordem \n2 - Mostrar em pré-ordem \n3 - Mostrar em pós-ordem:");
+        int op = sc.nextInt();
+        switch(op){
+            case 1:
+                tree.printTreeInOrder();
+                break;
+            case 2:
+                tree.printTreePreOrder();
+                break;
+            case 3:
+                tree.printTreePostOrder();
+                break;
+            default:
+                System.out.println("Opção Inválida!");
+                show(sc, tree);
+                break;
+        }
+
         confirmBackToMenu(sc, tree);
     }
 

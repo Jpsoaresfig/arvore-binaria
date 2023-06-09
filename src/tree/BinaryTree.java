@@ -130,27 +130,39 @@ public class BinaryTree {
     
     
     public void printTreeInOrder(){
-        
+        printTreeInOrder(root);
     }
 
     private void printTreeInOrder(Node node){
-        
+        if (node != null) {
+            printTreeInOrder(node.getLeft());
+            System.out.println(node.getStudent());
+            printTreeInOrder(node.getRight());
+        }
     }
 
     public void printTreePreOrder(){
-        
+        printTreePreOrder(root);
     }
 
     private void printTreePreOrder(Node node){
-        
+        if (node != null) {
+            System.out.println(node.getStudent());
+            printTreePreOrder(node.getLeft());
+            printTreePreOrder(node.getRight());
+        }
     }
 
     public void printTreePostOrder(){
-        
+        printTreePostOrder(root);
     }
 
     private void printTreePostOrder(Node node){
-        
+        if (node != null) {
+            printTreePostOrder(node.getLeft());
+            printTreePostOrder(node.getRight());
+            System.out.println(node.getStudent());
+        }
     }
     
 }
