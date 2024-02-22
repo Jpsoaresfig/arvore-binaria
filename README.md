@@ -1,8 +1,8 @@
-# Árvore Binária
+# Binary Tree
 
-Este projeto consiste na implementação de uma Árvore Binária em Java, desenvolvido em equipe para a disciplina de Estrutura de Dados I. A árvore binária é uma estrutura de dados amplamente utilizada que permite o armazenamento e organização de elementos de forma hierárquica.
+This project involves the implementation of a Binary Tree in Java, developed as a team for the Data Structures I course. The binary tree is a widely used data structure that enables the storage and organization of elements in a hierarchical manner.
 
-## Equipe
+## team
 
 - João Pedro Soares
 - Luiz Filipe de Matos Ramos
@@ -13,27 +13,27 @@ Este projeto consiste na implementação de uma Árvore Binária em Java, desenv
 
 - Leandro Santana
 
-## Funcionalidades
+## Functionalities
 
-O projeto inclui uma classe de interface chamada `UI` que permite interagir com a árvore binária por meio de um menu de opções. As seguintes funcionalidades estão disponíveis:
+The project includes an interface class called UI that allows interaction with the binary tree through a menu of options. The following functionalities are available:
 
-1. Inserir: Permite inserir um novo aluno na árvore, fornecendo o RGM e o nome do aluno.
-2. Remover um nó: Permite remover um aluno da árvore fornecendo o RGM correspondente.
-3. Pesquisar: Permite pesquisar um aluno na árvore pelo RGM.
-4. Esvaziar a árvore: Remove todos os alunos da árvore, deixando-a vazia.
-5. Exibir a árvore: Permite visualizar a árvore em três ordens diferentes: pré-ordem, em ordem e pós-ordem.
+1.Insert: Allows inserting a new student into the tree by providing the RGM and the student's name.
+2.Remove a node: Permits removing a student from the tree by providing the corresponding RGM.
+3.Search: Allows searching for a student in the tree by RGM.
+4.Empty the tree: Removes all students from the tree, leaving it empty.
+5.Display the tree: Allows visualizing the tree in three different orders: pre-order, in-order, and post-order.
 
-## Como executar o programa
+## How to run the program
 
 1. Compile o projeto em sua IDE Java favorita.
 2. Execute a classe `Java` para iniciar a interface.
 3. Siga as instruções exibidas no menu para interagir com a árvore binária.
 
-## Observações
+## Observations
 
-- Ao inserir um aluno com um RGM já existente na árvore, será exibida uma mensagem informando que o RGM já existe.
-- Antes de remover um aluno da árvore, será solicitada uma confirmação.
-- Ao pesquisar um aluno na árvore, será exibida uma mensagem informando se o aluno foi encontrado ou não.
-- Ao esvaziar a árvore, será solicitada uma confirmação.
-- Ao exibir a árvore, você pode escolher a ordem de exibição entre pré-ordem, em ordem e pós-ordem.
+-When inserting a student with an RGM already existing in the tree, a message will be displayed informing that the RGM already exists.
+-Before removing a student from the tree, confirmation will be requested.
+-When searching for a student in the tree, a message will be displayed indicating whether the student was found or not.
+-When emptying the tree, confirmation will be requested.
+-When displaying the tree, you can choose the order of display between pre-order, in-order, and post-order.
 
